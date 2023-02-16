@@ -4,6 +4,8 @@ import clsx from 'clsx'
 
 import { useCreateSubscriberMutation } from '@/graphql/generated'
 import { Logo } from '@/components'
+import CodeMockupImage from '@/assets/code-mockup.png'
+import ReactIcon from '@/assets/react-icon.svg'
 
 export function Subscribe() {
   const navigate = useNavigate()
@@ -31,7 +33,7 @@ export function Subscribe() {
         <div className="mt-10 flex w-full items-center justify-between">
           <div className="max-w-[624px] relative">
             <img
-              src="/src/assets/react-icon.svg"
+              src={ReactIcon}
               className="absolute top-0 left-2/4 -translate-2/4"
               alt=""
             />
@@ -87,7 +89,7 @@ export function Subscribe() {
           </div>
         </div>
 
-        <img src="/src/assets/code-mockup.png" className="z-10" alt="" />
+        <img src={CodeMockupImage} className="z-10" alt="" />
       </div>
     </div>
   )
