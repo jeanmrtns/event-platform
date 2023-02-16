@@ -1,8 +1,7 @@
 import { gql, useQuery } from '@apollo/client'
 import { DefaultUi, Player, Youtube } from '@vime/react'
 import { DiscordLogo, FileArrowDown, Image, Lightning } from 'phosphor-react'
-import { Button } from './Button'
-import { Card } from './Card'
+import { Button, Card } from '@/components'
 
 import '@vime/core/themes/default.css'
 
