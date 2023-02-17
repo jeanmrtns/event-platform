@@ -1,6 +1,6 @@
 import { DefaultUi, Player, Youtube } from '@vime/react'
 import { DiscordLogo, FileArrowDown, Image, Lightning } from 'phosphor-react'
-import { Button, Card } from '@/components'
+import { Button, Card, LoadingSpinner } from '@/components'
 
 import '@vime/core/themes/default.css'
 import { useGetLessonBySlugQuery } from '@/graphql/generated'
@@ -17,7 +17,11 @@ export function Video({ lessonSlug }: VideoProps) {
   })
 
   if (!data || !data.lesson) {
-    return <p className="flex-1">Carregando</p>
+    return (
+      <div className="flex-1 grid place-items-center">
+        <LoadingSpinner />
+      </div>
+    )
   }
 
   return (

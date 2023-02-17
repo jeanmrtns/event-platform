@@ -1,8 +1,15 @@
 import { Header, Sidebar, Video } from '@/components'
-import { useParams } from 'react-router-dom'
+import { useGetFirstLessonSlugQuery } from '@/graphql/generated'
+import { useParams, Navigate } from 'react-router-dom'
 
 export function Event() {
   const { slug } = useParams<{ slug: string }>()
+  const { data } = useGetFirstLessonSlugQuery()
+  const firstLessonSlug = data?.lessons[0]?.slug
+
+  if (!slug && firstLessonSlug) {
+    return <Navigate to={`/event/lesson/${firstLessonSlug}`} replace={true} />
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
