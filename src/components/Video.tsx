@@ -22,8 +22,8 @@ export function Video({ lessonSlug }: VideoProps) {
 
   return (
     <div className="flex-1">
-      <div className="bg-black flex justify-center">
-        <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
+      <div className="bg-black flex lg:justify-center">
+        <div className="h-full w-full lg:max-w-[1100px] max-h-[60vh] aspect-video">
           <Player>
             <Youtube videoId={data.lesson.videoId!} />
             <DefaultUi />
@@ -32,7 +32,7 @@ export function Video({ lessonSlug }: VideoProps) {
       </div>
 
       <div className="p-8 max-w-[1100px] mx-auto">
-        <div className="flex items-start gap-16">
+        <div className="flex flex-col w-full lg:flex-row items-start gap-16">
           <div className="flex-1">
             <strong className="text-2xl text-gray-100">
               {data.lesson.title}
@@ -49,7 +49,7 @@ export function Video({ lessonSlug }: VideoProps) {
                   src={data.lesson.teacher.avatarURL}
                   alt=""
                 />
-                <div className="flex flex-col leading-relaxed">
+                <div className="flex flex-col flex-1 leading-relaxed">
                   <span className="font-bold text-2xl text-gray-100">
                     {data.lesson.teacher.name}
                   </span>
@@ -61,7 +61,7 @@ export function Video({ lessonSlug }: VideoProps) {
             )}
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col md:flex-row mx-auto gap-4 w-full md:w-auto">
             <Button variant="primary" href="#">
               <DiscordLogo className="mr-1" size={24} />
               Comunidade no discord
@@ -74,7 +74,7 @@ export function Video({ lessonSlug }: VideoProps) {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 mt-20">
+        <div className="grid lg:grid-cols-2 gap-8 mt-20 mx-auto">
           <Card
             href="#"
             title="Material complementar"

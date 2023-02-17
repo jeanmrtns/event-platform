@@ -28,29 +28,31 @@ export function Subscribe() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-blur bg-cover bg-no-repeat">
+    <div className="min-h-screen w-full bg-blur bg-cover bg-no-repeat overflow-hidden">
       <div className="max-w-[1100px] w-full mx-auto flex flex-col items-center ">
-        <div className="mt-10 flex w-full items-center justify-between">
-          <div className="max-w-[624px] relative">
+        <div className="mt-10 flex flex-col lg:flex-row w-full items-center justify-between">
+          <div className="max-w-[624px] px-6 lg:px-0 relative text-center lg:text-start">
             <img
               src={ReactIcon}
-              className="absolute top-0 left-2/4 -translate-2/4"
+              className="absolute top-0 left-0 lg:left-2/4"
               alt=""
             />
-            <Logo />
-            <h1 className="text-[2.5rem] mt-6 leading-tight">
+            <div className="flex justify-center lg:justify-start">
+              <Logo />
+            </div>
+            <h1 className="text-3xl lg:text-[2.5rem] mt-6 leading-tight">
               Construa uma{' '}
               <strong className="text-blue-500">aplicação completa</strong>, do
               zero, com <strong className="text-blue-500">React</strong>
             </h1>
-            <p className="leading-relaxed mt-6 text-base text-gray-200">
+            <p className="leading-relaxed mt-6 text-sm lg:text-base text-gray-200">
               Em apenas uma semana você vai dominar na prática uma das
               tecnologias mais utilizadas e com alta demanda para acessar as
               melhores oportunidades do mercado.
             </p>
           </div>
 
-          <div className="p-8 bg-gray-700 rounded border border-gray-500 z-10">
+          <div className="p-8 bg-gray-700 rounded border mt-8 lg:mt-0 border-gray-500 z-10">
             <strong className="text-gray-100 text-2xl">
               Inscreva-se gratuitamente
             </strong>

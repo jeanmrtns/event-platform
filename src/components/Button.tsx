@@ -10,7 +10,7 @@ export function Button({ children, variant, ...props }: ButtonProps) {
     <a
       {...props}
       className={clsx(
-        'text-white font-bold text-sm flex items-center justify-center w-[237px] transition-colors p-4 rounded uppercase',
+        'text-white font-bold text-sm flex items-center justify-center w-full lg:w-[237px] transition-colors p-4 rounded uppercase',
         {
           'bg-green-500': variant === 'primary',
           'hover:bg-green-700': variant === 'primary',
