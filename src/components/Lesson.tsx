@@ -21,15 +21,20 @@ export function Lesson({ title, lessonSlug, availableAt, type }: LessonProps) {
   const isActiveLesson = slug === lessonSlug
 
   return (
-    <Link to={`/event/lesson/${lessonSlug}`} className="group">
+    <Link
+      to={isLessonAvailable ? `/event/lesson/${lessonSlug}` : '#'}
+      className="group"
+    >
       <time className="text-gray-300 text-base">{formattedDate}</time>
 
       <div
         className={clsx(
-          'mt-2 border border-gray-500 p-4 rounded group-hover:border-green-500 transition-colors relative',
+          'mt-2 border border-gray-500 p-4 rounded transition-colors relative',
           {
             'bg-green-500': isActiveLesson,
             'bg-transparent': !isActiveLesson,
+            'cursor-not-allowed': !isLessonAvailable,
+            'group-hover:border-green-500': isLessonAvailable,
           },
         )}
       >
